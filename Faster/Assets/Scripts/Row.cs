@@ -11,6 +11,7 @@ public class Row : MonoBehaviour {
 
 	void Start () {
 		gameController = GameObject.FindWithTag ("MainCamera").GetComponent<GameController>();
+		rowNumber = gameController.nextRow + 4;
 	}
 
 	void Update () {

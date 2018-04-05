@@ -6,13 +6,10 @@ public class GameController : MonoBehaviour {
 	
 	public int nextRow = 1;
 	public int nextBlack = 0;
-	public GameObject first;
-	public GameObject second;
-	public GameObject third;
-	public GameObject fourth;
+	public GameObject[] rows;
+	public GameObject spawnPoint;
 
 	void Update () {
-		
 		if (Input.GetButtonDown("First") && nextBlack == 1){
 			move ();
 		}
@@ -31,6 +28,9 @@ public class GameController : MonoBehaviour {
 	}
 
 	void move () {
+
+		Instantiate (rows[Random.Range(0, 4)], spawnPoint.transform.position, Quaternion.identity);
+
 		transform.Translate (0, 4, 0);
 		nextRow = nextRow + 1;
 	}
