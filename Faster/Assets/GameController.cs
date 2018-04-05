@@ -10,24 +10,24 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetButtonDown("First") && nextBlack == 1){
-			transform.Translate (0, 4, 0);
-			nextRow = nextRow + 1;
+			move ();
 		}
 
 		if (Input.GetButtonDown("Second") && nextBlack == 2){
-			transform.Translate (0, 4, 0);
-			nextRow = nextRow + 1;
+			move ();
 		}
 
 		if (Input.GetButtonDown("Third") && nextBlack == 3){
-			transform.Translate (0, 4, 0);
-			nextRow = nextRow + 1;
+			move ();
 		}
 
 		if (Input.GetButtonDown("Fourth") && nextBlack == 4){
-			transform.Translate (0, 4, 0);
-			nextRow = nextRow + 1;
-
+			move ();
 		}
+	}
+
+	void move () {
+		transform.Translate (0, 4, 0);
+		nextRow = nextRow + 1;
 	}
 }
