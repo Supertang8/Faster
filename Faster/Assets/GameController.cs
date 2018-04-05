@@ -6,6 +6,10 @@ public class GameController : MonoBehaviour {
 	
 	public int nextRow = 1;
 	public int nextBlack = 0;
+	public GameObject first;
+	public GameObject second;
+	public GameObject third;
+	public GameObject fourth;
 
 	void Update () {
 		
