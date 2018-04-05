@@ -7,6 +7,18 @@ public class Row : MonoBehaviour {
 	public int blackBlock;
 	public int rowNumber;
 
+	private GameController gameController;
+
+	void Start () {
+		gameController = GameObject.FindWithTag ("MainCamera").GetComponent<GameController>();
+	}
+
+	void Update () {
+		if (gameController.nextRow == blackBlock) {
+			gameController.nextBlack = blackBlock;
+		}
+	}
+
 	public void block (int number) {
 		blackBlock = number;
 	}
