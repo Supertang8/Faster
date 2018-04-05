@@ -14,7 +14,7 @@ public class Row : MonoBehaviour {
 	}
 
 	void Update () {
-		if (gameController.nextRow == blackBlock) {
+		if (gameController.nextRow == rowNumber) {
 			gameController.nextBlack = blackBlock;
 		}
 	}
