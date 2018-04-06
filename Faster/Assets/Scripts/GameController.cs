@@ -57,19 +57,13 @@ public class GameController : MonoBehaviour {
 
 	void scoreInc(){
 
-		scoreText = scoreText + 5;
+		scoreText = scoreText + 3;
 
 	}
 
 	void scoreDec(){
 	
-		scoreText = scoreText - 3;
+		scoreText = scoreText - 10;
 
-	}
-
-	public float score() {
-
-		return scoreText;
-	
 	}
 }

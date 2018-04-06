@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 	
 	private float timeLocal;
-	public GameObject timer;
+	private GameObject timer;
 
 	void Start(){
 
