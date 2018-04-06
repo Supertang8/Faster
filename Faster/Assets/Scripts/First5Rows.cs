@@ -17,6 +17,9 @@ public class First5Rows : MonoBehaviour {
 		if (gameController.nextRow == rowNumber) {
 			gameController.nextBlack = blackBlock;
 		}
+		if (gameController.transform.position.z == 26) {
+			Destroy (gameObject);
+		}
 	}
 
 	public void block (int number) {

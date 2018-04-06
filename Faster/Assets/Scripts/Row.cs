@@ -18,6 +18,9 @@ public class Row : MonoBehaviour {
 		if (gameController.nextRow == rowNumber) {
 			gameController.nextBlack = blackBlock;
 		}
+		if (gameController.nextRow -1 == rowNumber) {
+			Destroy (gameObject);
+		}
 	}
 
 	public void block (int number) {
