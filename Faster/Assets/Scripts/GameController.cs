@@ -14,10 +14,12 @@ public class GameController : MonoBehaviour {
 	public Text scoreCount;
 	public float scoreText;
 
+	private Timer timer;
+
 	void Start(){
 	
+		timer = GameObject.FindWithTag ("Timer").GetComponent<Timer> ();
 		scoreText = 0;
-
 	}
 
 
@@ -36,13 +38,13 @@ public class GameController : MonoBehaviour {
 			move ();
 			scoreInc ();
 		} else if (Input.GetButtonDown ("First") && nextBlack != 1) {
-			scoreDec ();
+			timeDec ();
 		} else if (Input.GetButtonDown ("Second") && nextBlack != 2) {
-			scoreDec ();
+			timeDec ();
 		} else if (Input.GetButtonDown ("Third") && nextBlack != 3) {
-			scoreDec ();
+			timeDec ();
 		} else if (Input.GetButtonDown ("Fourth") && nextBlack != 4) {
-			scoreDec ();
+			timeDec ();
 		} 
 	}
 
@@ -61,9 +63,9 @@ public class GameController : MonoBehaviour {
 
 	}
 
-	void scoreDec(){
+	void timeDec(){
 	
-		scoreText = scoreText - 10;
+		timer.timeCount = timer.timeCount - 5;
 
 	}
 }
