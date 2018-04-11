@@ -8,19 +8,17 @@ public class GameManager : MonoBehaviour {
 	
 	private float timeLocal;
 	private GameObject timer;
-	private GameController gameController;
 
 	public GameObject gameOverText;
 
 	void Start(){
 
 		timer = GameObject.FindWithTag("Timer");
-		gameController = GameObject.FindWithTag ("MainCamera").GetComponent<GameController> ();
 
 	}
 
 	void Update(){
-		timeLocal = timer.GetComponent<Timer> ().timeCount2;
+		timeLocal = timer.GetComponent<Timer> ().timeCount;
 		if (timeLocal < 0){
 			StartCoroutine("Quit");
 		}

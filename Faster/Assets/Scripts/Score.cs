@@ -7,16 +7,16 @@ public class Score : MonoBehaviour {
 
 	public Text scoreText;
 	public float scoreCount;
-	public GameObject camera;
+	public GameObject mainCamera;
 
 	void Start () {
 
-		camera = GameObject.FindWithTag("MainCamera");
+		mainCamera = GameObject.FindWithTag("MainCamera");
 	}
 
 	void Update(){
 
-		scoreCount = camera.GetComponent<GameController> ().scoreText;
+		scoreCount =mainCamera.GetComponent<GameController> ().scoreText;
 		scoreText.text = scoreCount.ToString("0");
 	}
 }
