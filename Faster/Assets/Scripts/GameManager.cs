@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour {
 	
 	private float timeLocal;
 	private GameObject timer;
+	private GameController gameController;
 
 	public GameObject gameOverText;
 
 	void Start(){
 
+		gameController = GameObject.FindWithTag ("MainCamera").GetComponent<GameController> ();
 		timer = GameObject.FindWithTag("Timer");
 
 	}
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator Quit () {
+		gameController.alive = false;
 		gameOverText.SetActive (true);
 		timer.SetActive (false);
 		yield return new WaitForSeconds (2);

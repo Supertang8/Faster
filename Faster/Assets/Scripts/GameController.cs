@@ -7,12 +7,11 @@ public class GameController : MonoBehaviour {
 	
 	public int nextRow = 1;
 	public int nextBlack = 0;
-
 	public GameObject[] rows;
 	public GameObject spawnPoint;
-
 	public Text scoreCount;
 	public float scoreText;
+	public bool alive = true;
 
 	private Timer timer;
 
@@ -24,28 +23,30 @@ public class GameController : MonoBehaviour {
 
 
 	void Update () {
-		
-		if (Input.GetButtonDown ("First") && nextBlack == 1) {
-			move ();
-			scoreInc ();
-		} else if (Input.GetButtonDown ("Second") && nextBlack == 2) {
-			move ();
-			scoreInc ();
-		} else if (Input.GetButtonDown ("Third") && nextBlack == 3) {
-			move ();
-			scoreInc ();
-		} else if (Input.GetButtonDown ("Fourth") && nextBlack == 4) {
-			move ();
-			scoreInc ();
-		} else if (Input.GetButtonDown ("First") && nextBlack != 1) {
-			timeDec ();
-		} else if (Input.GetButtonDown ("Second") && nextBlack != 2) {
-			timeDec ();
-		} else if (Input.GetButtonDown ("Third") && nextBlack != 3) {
-			timeDec ();
-		} else if (Input.GetButtonDown ("Fourth") && nextBlack != 4) {
-			timeDec ();
-		} 
+		if (alive) 
+		{
+			if (Input.GetButtonDown ("First") && nextBlack == 1) {
+				move ();
+				scoreInc ();
+			} else if (Input.GetButtonDown ("Second") && nextBlack == 2) {
+				move ();
+				scoreInc ();
+			} else if (Input.GetButtonDown ("Third") && nextBlack == 3) {
+				move ();
+				scoreInc ();
+			} else if (Input.GetButtonDown ("Fourth") && nextBlack == 4) {
+				move ();
+				scoreInc ();
+			} else if (Input.GetButtonDown ("First") && nextBlack != 1) {
+				timeDec ();
+			} else if (Input.GetButtonDown ("Second") && nextBlack != 2) {
+				timeDec ();
+			} else if (Input.GetButtonDown ("Third") && nextBlack != 3) {
+				timeDec ();
+			} else if (Input.GetButtonDown ("Fourth") && nextBlack != 4) {
+				timeDec ();
+			}
+		}
 	}
 
 	void move () {
